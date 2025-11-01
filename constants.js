@@ -1,3 +1,4 @@
+// constants.js
 export const constants = {
     VALIDATION_ERROR:400,
     UNAUTHORISED:401,

@@ -1,3 +1,4 @@
+// contactController
 import contactSchema from "../models/contactModel.js";
 import mongoose from "mongoose";
 export const getContacts = async (req, res) => {

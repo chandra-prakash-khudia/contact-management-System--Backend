@@ -1,3 +1,4 @@
+// userRoute
 import express from "express"
 import { getProfile, loginUser, logout, refreshToken, registerUser } from "../controllers/userController.js"
 import { Validator } from "../middleware/validateTokenHandler.js"

@@ -1,10 +1,10 @@
+// server.js
 import express from "express"
 import dotenv from "dotenv"
 import contactRoute from "./routes/contactRoute.js"
 import { errorHandler } from "./middleware/errorhandler.js"
 import  {connectDB}  from "./config/dbConnection.js"
 import cookieParser from "cookie-parser";
-
 
 import userRoute from "./routes/userRoutes.js"
 dotenv.config(); 
