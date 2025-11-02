@@ -14,7 +14,7 @@ const app = express()
 const PORT = process.env.PORT || 3000 
 app.use(
   cors({
-    origin: ["https://myfrontend.vercel.app"],
+    origin: ["https://contact-management-system-backend.vercel.app"],
     credentials: true,
   })
 );
