@@ -26,7 +26,6 @@ const cookieOptions = {
 
 export const refreshToken = async (req, res, next) => {
   // token can come from cookie or body (we prefer cookie)
-  console.log("cookies:", req.cookies);
   const incomingToken = req.cookies?.[COOKIE_NAME] || req.body.refreshToken;
   if (!incomingToken) {
     res.status(401);

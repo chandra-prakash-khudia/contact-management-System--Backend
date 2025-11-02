@@ -10,15 +10,18 @@ export const getContacts = async (req, res) => {
 export const createContact = async (req, res) => {
   console.log("console", req.body);
   const { name, email, phone } = req.body;
-  const check = await contactSchema.find({ name });
-  if (!check) {
-    res.status(400);
-    throw new Error("User allready exist");
-  }
-  if (!name || !email || !phone) {
+   if (!name || !email || !phone) {
     res.status(400);
     throw new Error("All Fields are Required");
   }
+   const existingContact = await contactSchema.findOne({ name, user_id: req.user.id });
+  if (existingContact) {
+    res.status(400);
+    throw new Error("Contact with this name already exists for the user");
+  }
+
+
+ 
   const contact = await contactSchema.create({
     name,
     email,

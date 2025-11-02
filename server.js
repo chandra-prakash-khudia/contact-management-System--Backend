@@ -5,13 +5,21 @@ import contactRoute from "./routes/contactRoute.js"
 import { errorHandler } from "./middleware/errorhandler.js"
 import  {connectDB}  from "./config/dbConnection.js"
 import cookieParser from "cookie-parser";
-
+import cors from 'cors'
 import userRoute from "./routes/userRoutes.js"
 dotenv.config(); 
 connectDB()
 const app = express()
 
 const PORT = process.env.PORT || 3000 
+app.use(
+  cors({
+    origin: ["https://myfrontend.vercel.app"],
+    credentials: true,
+  })
+);
+
+
 app.use(cookieParser());
 app.use(express.json())
 app.use("/api/contacts/", contactRoute)
